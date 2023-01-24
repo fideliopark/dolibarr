@@ -7640,7 +7640,8 @@ function getCommonSubstitutionArray($outputlangs, $onlykey = 0, $exclude = null,
 			$substitutionarray['__REF_CLIENT__'] = '__REF_CLIENT__';
 			$substitutionarray['__REF_SUPPLIER__'] = '__REF_SUPPLIER__';
 			$substitutionarray['__NOTE_PUBLIC__'] = '__NOTE_PUBLIC__';
-			$substitutionarray['__NOTE_PRIVATE__'] = '__NOTE_PRIVATE__';
+			$substitutionarray['__NOTE_PRIVATE__'] = '__NOTE_PRIVATE__';			
+			$substitutionarray['__PAYMODE__'] = $object->mode_reglement;
 			$substitutionarray['__EXTRAFIELD_XXX__'] = '__EXTRAFIELD_XXX__';
 
 			if (isModEnabled("societe")) {	// Most objects are concerned
