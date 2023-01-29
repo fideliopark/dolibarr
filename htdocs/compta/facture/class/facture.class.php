@@ -3297,16 +3297,6 @@ class Facture extends CommonInvoice
 				}
 			}
 
-			// Trigger calls
-			if (!$error && !$notrigger) {
-				// Call trigger
-				$result = $this->call_trigger('BILL_VALIDATE', $user);
-				if ($result < 0) {
-					$error++;
-				}
-				// End call triggers
-			}
-
 			if (!$error) {
 				$this->oldref = $this->ref;
 
@@ -3377,6 +3367,17 @@ class Facture extends CommonInvoice
 
 					$this->setFinal($user);
 				}
+			}
+			
+
+			// Trigger calls
+			if (!$error && !$notrigger) {
+				// Call trigger
+				$result = $this->call_trigger('BILL_VALIDATE', $user);
+				if ($result < 0) {
+					$error++;
+				}
+				// End call triggers
 			}
 		} else {
 			$error++;
